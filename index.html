@@ -10,7 +10,10 @@
       (function(l) {
         if (l.hash && l.hash.length > 1) {
           var pathAndQuery = l.hash.slice(1);
-          window.history.replaceState(null, '', pathAndQuery + l.hash);
+          
+          // This will ensure that the URL in the address bar is updated 
+          // without the hash, giving you the desired format.
+          window.history.replaceState(null, '', pathAndQuery);
         }
       })(window.location);
     </script>
