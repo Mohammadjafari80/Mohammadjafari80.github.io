@@ -5,21 +5,19 @@
     <title>React Router</title>
     <script type="text/javascript">
         var l = window.location;
-        
-        // Check if the URL is already in the "fixed" format
-        if (!l.search.startsWith("/?/")) {
-          l.replace(
-              l.protocol +
-              "//" +
-              l.hostname +
-              (l.port ? ":" + l.port : "") +
-              "/?/" +
-              l.pathname.slice(1).replace(/&/g, "~and~") +
-              (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-              l.hash
-          );
-        }
-      </script>
+        l.replace(
+            l.protocol +
+            '//' +
+            l.hostname +
+            (l.port ? ':' + l.port : '') +
+            l.pathname.split('/').slice(0, 1).join('/') +
+            '/#' +
+            l.pathname.slice(1) +
+            (l.search ? '?' + l.search.slice(1) : '') +
+            l.hash
+        );
+    </script>
+      
       
   </head>
   <body></body>

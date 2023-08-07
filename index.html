@@ -7,19 +7,14 @@
     <title>Vite + React + TS</title>
 
     <script type="text/javascript">
-      (function (l) {
-        if (l.search.startsWith("/?/")) {
-          var decoded = l.search
-            .slice(3)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(null, null, decoded + l.hash);
+      (function(l) {
+        if (l.hash && l.hash.length > 1) {
+          var pathAndQuery = l.hash.slice(1);
+          window.history.replaceState(null, '', pathAndQuery + l.hash);
         }
       })(window.location);
     </script>
+    
      
 
   </head>
