@@ -16,10 +16,11 @@
               return s.replace(/~and~/g, "&");
             })
             .join("?");
-          window.history.replaceState(null, null, "/" + decoded + l.hash);
+          window.history.replaceState(null, null, decoded + l.hash);
         }
       })(window.location);
-    </script>    
+    </script>
+     
 
     <script type="module" crossorigin src="/assets/index-a8409a02.js"></script>
     <link rel="stylesheet" href="/assets/index-d526a0c5.css">
