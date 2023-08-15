@@ -11,7 +11,7 @@ interface FourierVisProps {
 const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width = 512, height = 512 }) => {
     const divRef = useRef<HTMLDivElement>(null);
     const [path, setPath] = useState<[number, number][]>([]);
-    const colors = ["rgb(63, 110, 231)", "rgb(228, 170, 66)", "rgba(208, 90, 69)", "rgba(74, 156, 128)"];
+    const colors = ["rgb(63, 110, 231)", "rgba(208, 90, 69)", "rgba(74, 156, 128)"];
 
     useEffect(() => {
         // Fetch the path from the provided txt file path
