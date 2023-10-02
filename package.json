@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-three/drei": "^9.80.3",
+    "@splinetool/react-spline": "^2.2.6",
     "@types/svg-parser": "^2.0.3",
     "@types/svg-path-parser": "^1.1.3",
     "d3": "^7.8.5",
@@ -19,8 +20,10 @@
     "d3-shape": "^3.2.0",
     "flubber": "^0.4.2",
     "fourier-transform": "^1.1.2",
+    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-router-dom": "^6.14.2",
     "react-three-fiber": "^6.0.13",
     "svg-parser": "^2.0.4",

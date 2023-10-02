@@ -58,6 +58,12 @@ class FourierCircle {
         this.radius.setAttribute("class", "radius");
         this.radius.setAttribute("stroke", color);
 
+        const thickness = 30
+        console.log(`${thickness}`)
+        this.centre.setAttribute("stroke-width", `${thickness}px`);  // Example stroke width
+        this.circle.setAttribute("stroke-width", `${thickness}px`);  // Example stroke width
+        this.radius.setAttribute("stroke-width", `${thickness}px`);  // Example stroke width
+
         this.update(position, this.sample);
     }
 
