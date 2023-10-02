@@ -58,12 +58,6 @@ class FourierCircle {
         this.radius.setAttribute("class", "radius");
         this.radius.setAttribute("stroke", color);
 
-        const thickness = 30
-        console.log(`${thickness}`)
-        this.centre.setAttribute("stroke-width", `${thickness}px`);  // Example stroke width
-        this.circle.setAttribute("stroke-width", `${thickness}px`);  // Example stroke width
-        this.radius.setAttribute("stroke-width", `${thickness}px`);  // Example stroke width
-
         this.update(position, this.sample);
     }
 
@@ -211,6 +205,17 @@ class FourierDiagram {
                 time -= this.period;  // Reset the time keeping the difference
                 totalTracedPath += currentRoundPath + " ";  // Append the current round path to the total traced path
                 currentRoundPath = "";  // Reset only the current round path
+                
+                 // Make circles, lines, and radii invisible
+                 this.transform.forEach(circle => {
+                    circle.centre.setAttribute("visibility", "hidden");
+                    circle.circle.setAttribute("visibility", "hidden");
+                    circle.radius.setAttribute("visibility", "hidden");
+                });
+                endCircle.setAttribute("visibility", "hidden");  // Hide endCircle
+
+                break;  // Exit the loop once the drawing is complete
+
             }
         }
     }
