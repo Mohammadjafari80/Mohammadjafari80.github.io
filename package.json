@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.1",
     "@react-three/drei": "^9.80.3",
     "@splinetool/react-spline": "^2.2.6",
