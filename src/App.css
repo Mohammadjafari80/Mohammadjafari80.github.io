@@ -57,19 +57,19 @@
 .radius{
   fill: none;
   /* stroke: rgba(255, 255, 255, 0.242); */
-  stroke-width: 1;
+  stroke-width: 2;
 }
 
 .bigCircle{
   fill: none;
   /* stroke: rgba(32, 155, 186, 0.242); */
-  stroke-width: 1;
+  stroke-width: 2;
 }
 
 .tracePoint{
   fill: rgb(255, 0, 0);
   stroke: rgba(32, 155, 186, 0.242);
-  stroke-width: 3;
+  stroke-width: 5;
 }
 
 .tracePath {
@@ -81,7 +81,7 @@
 
 .radius {
   stroke: rgba(74, 156, 128, 0.5);
-  stroke-width: 1;
+  stroke-width: 2;
 }
 
 .stop {
