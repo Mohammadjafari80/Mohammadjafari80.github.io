@@ -30,3 +30,19 @@
   font-weight: 500;
   font-style: normal;
 }
+
+/* For Webkit browsers like Chrome/Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* For IE/Edge */
+body {
+  -ms-overflow-style: none;
+}

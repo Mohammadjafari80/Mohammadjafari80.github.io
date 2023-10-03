@@ -46,7 +46,7 @@ const App: React.FC = () => {
               <MovingGradientText text="Mohammad Jafari" fontsize={32} />
             </Box>
             <Box mt={4} textAlign="left">
-              <p>I'm a computer science student specializing in the fields of robustness and optimization. My academic journey revolves around designing algorithms that are not only efficient but also resilient to various challenges. I work in a cutting-edge lab, applying my skills in Python and deep learning to address real-world problems. My research intersects between theoretical concepts and practical applications, as I strive for solutions that are both optimal and robust.</p>
+            <p>I am currently a final-year <strong>BSc student</strong> at <strong>Sharif University of Technology</strong>, majoring in computer science with a specialization in <strong>robustness and optimization</strong>. My academic journey is centered around designing algorithms that exhibit <strong>efficiency and resilience</strong> to various challenges. I am actively involved in a cutting-edge lab where I utilize my <strong>Python and deep learning skills</strong> to tackle real-world problems. The intersection of theoretical concepts and practical applications drives my research endeavors as I aim for solutions that embody both <strong>optimality and robustness</strong>.</p>
             </Box>
             <Box mt={4} textAlign="left">
               <ContactLinks></ContactLinks>
