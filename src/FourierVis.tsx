@@ -31,7 +31,7 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
     useEffect(() => {
         if (divRef.current && path.length > 0) {
             const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
-            diagram.draw('./src/assets/portfolio.png');
+            diagram.draw('/portfolio.png');
         }
     }, [path, timePerPoint]);
 

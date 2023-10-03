@@ -38,9 +38,9 @@ const App: React.FC = () => {
     <Box>
       <NavBar />
       <Section variant="dark">
-        <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={{ base: "0", md: "6" }}>
+        <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={{ base: "1", md: "6" }}>
           <Box order={{ base: 2, md: 1 }}>
-            <Box display="flex" alignItems="baseline" gap="1rem" whiteSpace="nowrap" textAlign="left">
+            <Box display="flex" alignItems="baseline" gap="0.5rem" whiteSpace="nowrap" textAlign="left">
               <Text fontSize="md">Hi, I'm </Text>
               <MovingGradientText text="Mohammad Jafari" fontsize={32} />
             </Box>
