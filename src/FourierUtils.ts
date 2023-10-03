@@ -141,7 +141,7 @@ class FourierDiagram {
         return `${x} ${y} ${length} ${length}`;
     }
 
-    async draw(): Promise<void> {
+    async draw(imagePath: string): Promise<void> {
         this.diagram.innerHTML = "";
     
         const elemSVG = document.createElementNS(FourierDiagram.svgNamespace, "svg");
@@ -170,10 +170,18 @@ class FourierDiagram {
     
         let currentRoundPath = "";
         let totalTracedPath = "";
+
+        const startTime = Date.now();
+        let elapsedTime = 0;
+
         let time = await FourierDiagram.waitForFrame();
-        const endTime = time + this.period;
-    
+        let loopCount = 0 
+
         while (true) {  // Infinite loop
+
+            const now = Date.now();
+            elapsedTime = now - startTime;
+
             let acc = new Complex(0, 0);
     
             const n = time % this.period;
@@ -201,24 +209,63 @@ class FourierDiagram {
             time = await FourierDiagram.waitForFrame();
     
             // Reset time and currentRoundPath once animation completes for the given period
-            if (time >= endTime) {
+            if (elapsedTime > 20000) {
                 time -= this.period;  // Reset the time keeping the difference
                 totalTracedPath += currentRoundPath + " ";  // Append the current round path to the total traced path
                 currentRoundPath = "";  // Reset only the current round path
-                
-                 // Make circles, lines, and radii invisible
-                 this.transform.forEach(circle => {
-                    circle.centre.setAttribute("visibility", "hidden");
-                    circle.circle.setAttribute("visibility", "hidden");
-                    circle.radius.setAttribute("visibility", "hidden");
-                });
-                endCircle.setAttribute("visibility", "hidden");  // Hide endCircle
 
-                break;  // Exit the loop once the drawing is complete
+                 // Make circles, lines, and radii invisible
+                 if (loopCount == 0){
+
+                    this.transitionToImage(imagePath);
+
+                    // this.transform.forEach(circle => {
+                    //     circle.centre.setAttribute("visibility", "hidden");
+                    //     circle.circle.setAttribute("visibility", "hidden");
+                    //     circle.radius.setAttribute("visibility", "hidden");
+                    // });
+                    // endCircle.setAttribute("visibility", "hidden");  // Hide endCircle
+
+                    // break;  // Exit the loop once the drawing is complete
+                }
+                
+                loopCount += 1;
 
             }
         }
     }
+
+    transitionToImage(imagePath: string): void {
+        // Ensure the container is positioned relatively
+        this.diagram.style.position = 'relative';
+        
+        // Create an image element
+        const image = document.createElement('img');
+        image.src = imagePath;  // The path to your image
+        image.style.transition = 'opacity 2s';  // Add a fade-in and transform animation
+        image.style.opacity = '0';
+        image.style.width = '100%';
+        // image.style.height = '100%';  // Set height to 100% to cover the Fourier visualization
+        image.style.position = 'absolute';  // Position the image absolutely
+        image.style.top = '0';  // Align to the top
+        image.style.left = '0';  // Align to the left
+        image.style.filter = 'grayscale(1)';  // Convert the image to black and white
+        image.style.borderRadius = '50%';  // Add rounded corners
+        image.style.transform = 'scale(0.85) translateY(-7%) translateX(-2%)';  // Start with the image translated to the left
+        image.style.zIndex = "-2"
+
+    
+        // Append the image to the diagram container on top of the Fourier visualization
+        this.diagram.appendChild(image);
+        
+        // Trigger the fade-in and transform animation after a brief delay
+        setTimeout(() => {
+            image.style.opacity = '0.7';  // Set the final opacity to 0.8 so the Fourier visualization is partially visible underneath
+        }, 1);
+    }
+    
+    
+    
     
 }
 

@@ -50,7 +50,7 @@ const App: React.FC = () => {
           </Box>
           <Tooltip label="This is my Fourier transform" aria-label="A tooltip">
             <Box order={{ base: 1, md: 2 }}>
-              <FourierVis timePerPoint={20} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
+              <FourierVis timePerPoint={30} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
             </Box>
           </Tooltip>
         </Grid>

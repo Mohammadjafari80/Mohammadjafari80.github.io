@@ -51,19 +51,21 @@
   opacity: 0.5;
   fill: none;
   stroke: white;
-  stroke-width: 0.3;
+  stroke-width: 30;
 }
 
 .radius{
   fill: none;
   /* stroke: rgba(255, 255, 255, 0.242); */
-  stroke-width: 2;
+  stroke-width: 3;
+  opacity: 0.5;
 }
 
 .bigCircle{
   fill: none;
   /* stroke: rgba(32, 155, 186, 0.242); */
-  stroke-width: 2;
+  stroke-width: 3;
+  opacity: 0.5;
 }
 
 .tracePoint{
@@ -104,6 +106,6 @@
 
 .traceLine {
   fill: none;
-  stroke-width: 2;
+  stroke-width: 4;
   stroke: rgba(209, 157, 61, 0.7);
 }

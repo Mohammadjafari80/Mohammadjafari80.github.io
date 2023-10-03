@@ -31,7 +31,7 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
     useEffect(() => {
         if (divRef.current && path.length > 0) {
             const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
-            diagram.draw();
+            diagram.draw('./src/assets/portfolio.png');
         }
     }, [path, timePerPoint]);
 
@@ -49,7 +49,7 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
                 height: height,
             }}>
                 <div ref={divRef} style={{
-                    transform: 'scale(1.3)',  // Zoom factor
+                    transform: 'scale(1)',  // Zoom factor
                     transformOrigin: 'center center',  // Zoom from the center
                 }}></div>
             </div>
