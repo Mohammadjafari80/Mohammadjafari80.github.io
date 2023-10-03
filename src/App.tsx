@@ -5,6 +5,7 @@ import Section from "./componenets/Section";
 import MovingGradientText from "./componenets/MovingGradientText";
 import FourierVis from './FourierVis';
 import "./App.css";
+import ContactLinks from './componenets/ContactLinks';
 
 const App: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 320, height: 320 });
@@ -47,36 +48,21 @@ const App: React.FC = () => {
             <Box mt={4} textAlign="left">
               <p>I'm a computer science student specializing in the fields of robustness and optimization. My academic journey revolves around designing algorithms that are not only efficient but also resilient to various challenges. I work in a cutting-edge lab, applying my skills in Python and deep learning to address real-world problems. My research intersects between theoretical concepts and practical applications, as I strive for solutions that are both optimal and robust.</p>
             </Box>
-            <Tag
-              borderRadius="md"
-              fontSize="sm"
-              fontWeight="bold"
-              style={{ backgroundColor: hexToRgba("#e4aa42", 0.5) }}
-              m={1}
-              p={2}
-            >
-              Group 1
-            </Tag>
+            <Box mt={4} textAlign="left">
+              <ContactLinks></ContactLinks>
+            </Box>
           </Box>
-          <Tooltip label="This is my Fourier transform" aria-label="A tooltip">
+          <Tooltip label={"This rendering represents a picture of me, achieved through the utilization of the Fourier series to approximate a continuous signal. It visualizes the concept using epicycles - rotating vectors placed end-to-end, with the Fourier series helping in determining the magnitude and initial position of each vector. The model is inspired by a video from 3Blue1Brown that explains and demonstrates this topic."} aria-label="A tooltip">
             <Box order={{ base: 1, md: 2 }}>
               <FourierVis timePerPoint={30} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
             </Box>
           </Tooltip>
         </Grid>
       </Section>
-      {/* <Section>
+      <Section>
         <Box id="grid-parent" height='100%' style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', opacity: 0.5 }}>
-          <BinaryGrid
-            duration={3000}
-            fontSize={25}
-            opacityZero={0.2}
-            opacityOne={0.8}
-            gap={2}
-            blur={true}
-          />
         </Box>
-    </Section> */}
+    </Section>
 
     </Box>
   );
