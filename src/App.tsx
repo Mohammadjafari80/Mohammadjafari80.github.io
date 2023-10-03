@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Grid, Text, Tooltip, Tag } from "@chakra-ui/react";
+import { Box, Grid, Text, Tooltip } from "@chakra-ui/react";
 import NavBar from "./componenets/NavBar";
 import Section from "./componenets/Section";
 import MovingGradientText from "./componenets/MovingGradientText";
@@ -69,11 +69,3 @@ const App: React.FC = () => {
 }
 
 export default App;
-
-function hexToRgba(hex: string, alpha: number): string {
-  const red = parseInt(hex.substr(1, 2), 16);
-  const green = parseInt(hex.substr(3, 2), 16);
-  const blue = parseInt(hex.substr(5, 2), 16);
-
-  return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
-}
