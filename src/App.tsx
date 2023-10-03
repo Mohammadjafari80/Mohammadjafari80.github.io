@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Grid, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Grid, Text, Tooltip, Tag } from "@chakra-ui/react";
 import NavBar from "./componenets/NavBar";
 import Section from "./componenets/Section";
 import MovingGradientText from "./componenets/MovingGradientText";
@@ -47,6 +47,16 @@ const App: React.FC = () => {
             <Box mt={4} textAlign="left">
               <p>I'm a computer science student specializing in the fields of robustness and optimization. My academic journey revolves around designing algorithms that are not only efficient but also resilient to various challenges. I work in a cutting-edge lab, applying my skills in Python and deep learning to address real-world problems. My research intersects between theoretical concepts and practical applications, as I strive for solutions that are both optimal and robust.</p>
             </Box>
+            <Tag
+              borderRadius="md"
+              fontSize="sm"
+              fontWeight="bold"
+              style={{ backgroundColor: hexToRgba("#e4aa42", 0.5) }}
+              m={1}
+              p={2}
+            >
+              Group 1
+            </Tag>
           </Box>
           <Tooltip label="This is my Fourier transform" aria-label="A tooltip">
             <Box order={{ base: 1, md: 2 }}>
@@ -73,3 +83,11 @@ const App: React.FC = () => {
 }
 
 export default App;
+
+function hexToRgba(hex: string, alpha: number): string {
+  const red = parseInt(hex.substr(1, 2), 16);
+  const green = parseInt(hex.substr(3, 2), 16);
+  const blue = parseInt(hex.substr(5, 2), 16);
+
+  return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+}

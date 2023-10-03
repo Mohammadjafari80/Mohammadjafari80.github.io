@@ -28,7 +28,7 @@ const Section: React.FC<SectionProps> = ({ children, variant = "light" }) => {
         mb="50px"
         css={{
           "@media (min-width: 1200px)": {
-            maxWidth: "70%",
+            maxWidth: "60%",
           },
         }}
       >
