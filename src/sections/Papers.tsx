@@ -6,7 +6,7 @@ import PaperComponent from '../componenets/PaperComponent';
 const PapersUnderReviewSection: React.FC = () => {
   return (
     <Box>
-      <Heading mb={8}>Papers Under Review</Heading>
+      <Heading mb={8}>Papers</Heading>
       <PaperComponent
         title="RODEO: Robust Out-of-Distribution Detection Via Exposing Adaptive Outliers"
         authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Ali Ansari, Sepehr Ghobadi, Masoud Hadi, Arshia Soltani Moakhar, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban"
