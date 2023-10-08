@@ -44,7 +44,7 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
         <ListItem>
           <Icon as={FaLink} mr={2} />
           {link ? (
-            <Text as="a" href={link} isExternal={status !== 'Under Review'}>{link}</Text>
+            <Text as="a" href={link}>{link}</Text>
           ) : (
             <Text as="span">[Access Upon Request]</Text>
           )}
