@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Grid, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Grid, Text, Tooltip} from "@chakra-ui/react";
 import NavBar from "./componenets/NavBar";
 import Section from "./componenets/Section";
 import MovingGradientText from "./componenets/MovingGradientText";
 import FourierVis from './FourierVis';
 import "./App.css";
 import ContactLinks from './componenets/ContactLinks';
+import PapersUnderReviewSection from './sections/Papers';
 
 const App: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 320, height: 320 });
@@ -60,9 +61,8 @@ const App: React.FC = () => {
         </Grid>
       </Section>
       <Section>
-        <Box id="grid-parent" height='100%' style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', opacity: 0.5 }}>
-        </Box>
-    </Section>
+        <PapersUnderReviewSection />
+      </Section>
 
     </Box>
   );
