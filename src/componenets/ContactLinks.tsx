@@ -4,7 +4,7 @@ import { FaEnvelope, FaFilePdf, FaGithub, FaLinkedin } from 'react-icons/fa';
 const ContactLinks = () => {
   return (
     <Grid
-      templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}  // 2x2 grid for base and 1x4 grid for md and above
+      templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(auto-fit, minmax(100px, 1fr))" }}  // 2x2 grid for base and 1x4 grid for md and above
       gap={{ base: "1", md: "3" }}  // Adjust gap between tags
     >
       <Tag

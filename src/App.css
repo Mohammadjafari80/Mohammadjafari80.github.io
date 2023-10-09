@@ -106,6 +106,10 @@
 
 .traceLine {
   fill: none;
-  stroke-width: 4;
+  stroke-width: 6;
   stroke: rgba(209, 157, 61, 0.7);
+}
+
+.date-style {
+  color: #004d40;  
 }

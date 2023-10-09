@@ -209,12 +209,12 @@ class FourierDiagram {
             time = await FourierDiagram.waitForFrame();
     
             // Reset time and currentRoundPath once animation completes for the given period
-            if (elapsedTime > 20000) {
+            if (elapsedTime > 5000) {
                 time -= this.period;  // Reset the time keeping the difference
                 totalTracedPath += currentRoundPath + " ";  // Append the current round path to the total traced path
                 currentRoundPath = "";  // Reset only the current round path
 
-                 // Make circles, lines, and radii invisible
+                 // Make circles, lines, nd radii invisible
                  if (loopCount == 0){
 
                     this.transitionToImage(imagePath);
@@ -242,7 +242,7 @@ class FourierDiagram {
         // Create an image element
         const image = document.createElement('img');
         image.src = imagePath;  // The path to your image
-        image.style.transition = 'opacity 2s';  // Add a fade-in and transform animation
+        image.style.transition = 'opacity 1s';  // Add a fade-in and transform animation
         image.style.opacity = '0';
         image.style.width = '100%';
         // image.style.height = '100%';  // Set height to 100% to cover the Fourier visualization
@@ -252,16 +252,26 @@ class FourierDiagram {
         image.style.filter = 'grayscale(1)';  // Convert the image to black and white
         image.style.borderRadius = '50%';  // Add rounded corners
         image.style.transform = 'scale(0.85) translateY(-7%) translateX(-2%)';  // Start with the image translated to the left
-        image.style.zIndex = "-2"
-
+        image.style.zIndex = "5"
     
         // Append the image to the diagram container on top of the Fourier visualization
         this.diagram.appendChild(image);
         
         // Trigger the fade-in and transform animation after a brief delay
         setTimeout(() => {
-            image.style.opacity = '0.7';  // Set the final opacity to 0.8 so the Fourier visualization is partially visible underneath
+            image.style.opacity = '0.4'; 
         }, 1);
+    
+        // Add event listeners for mouseenter and mouseleave
+        image.addEventListener('mouseenter', () => {
+            // image.style.transition = 'opacity 0.5s';  // Set transition duration for fade-out
+            image.style.opacity = '0.05';  // Set opacity for fade-out
+        });
+        
+        image.addEventListener('mouseleave', () => {
+            // image.style.transition = 'opacity 0.5s';  // Set transition duration for fade-in
+            image.style.opacity = '0.4';  // Reset opacity to original value for fade-in
+        });
     }
     
     

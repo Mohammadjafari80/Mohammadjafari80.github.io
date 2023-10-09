@@ -41,7 +41,7 @@ const NavBar = () => {
   const renderMenuItems = () => (
     <>
       {/* <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
-        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/About">About</NavLink>
       </Text> */}
       {/* <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
         <NavLink to="/materials">Materials</NavLink>
@@ -53,13 +53,13 @@ const NavBar = () => {
       <Tabs variant="unstyled" index={selectedTabIndex}>
         <TabList>
           <NavLink
-            to="/home"
+            to="/About"
             className={({ isActive }) => {
               return isActive ? "active-link" : "";
             }}
           >
             <Tab fontSize={15} fontWeight={"bold"}>
-              Home
+              About
             </Tab>
           </NavLink>
           <NavLink
@@ -93,8 +93,8 @@ const NavBar = () => {
       <MenuButton as={IconButton} icon={<HamburgerIcon />} mr={5} />
       <Portal>
         <MenuList width="100%" position="fixed" top="0" left="0" bg={bgColor}>
-          <NavLink to="/home">
-            <MenuItem bg={bgColor}>Home</MenuItem>
+          <NavLink to="/About">
+            <MenuItem bg={bgColor}>About</MenuItem>
           </NavLink>
           <NavLink to="/experiences">
             <MenuItem bg={bgColor}>Experiences</MenuItem>
