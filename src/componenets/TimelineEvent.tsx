@@ -55,9 +55,15 @@ const TimelineEvent: FC<TimelineEventProps> = ({
       }}
     >
       <GridItem
-        padding="10px"
+        padding={{
+          base: "30px",
+          lg: "10px",
+        }}
         width={"100%"}
         overflow={"hidden"}
+        mx={'auto'}
+        display={'flex'}
+        justifyContent={'center'}
       >
         <Image
           src={imageUrl}

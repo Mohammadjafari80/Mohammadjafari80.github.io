@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grid, Text, Tooltip} from "@chakra-ui/react";
+import { Element } from "react-scroll";  // Import Element from react-scroll
 import NavBar from "./componenets/NavBar";
 import Section from "./componenets/Section";
 import MovingGradientText from "./componenets/MovingGradientText";
@@ -9,7 +10,7 @@ import ContactLinks from './componenets/ContactLinks';
 import PapersUnderReviewSection from './sections/Papers';
 // import ResearchTimeline from './sections/ResearchTimeline';
 import Timeline from './sections/Timeline';
-
+import Projects from './sections/Projects'
 const App: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 320, height: 320 });
 
@@ -42,6 +43,7 @@ const App: React.FC = () => {
   return (
     <Box>
       <NavBar />
+      <Element name="About">
       <Section variant="dark">
         <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={{ base: "1", md: "6" }}>
           <Box order={{ base: 2, md: 1 }}>
@@ -50,7 +52,7 @@ const App: React.FC = () => {
               <MovingGradientText text="Mohammad Jafari" fontsize={32} />
             </Box>
             <Box mt={4} textAlign="left">
-            <p>I am a final-year <strong>BSc student</strong> at <strong>Sharif University of Technology</strong>, majoring in computer engineering with a specialization in <strong>robustness and optimization</strong>. My research endeavors are primarily directed towards the development of trustworthy and scalable algorithms, focusing on <strong>robustness and optimization</strong>. My academic exploration broadly encompasses <strong>machine learning (ML)/deep learning (DL)</strong>, optimization theory, and algorithm design, aiming for solutions that are both <strong>efficient and resilient</strong> to various challenges. These research topics provide a solid foundation for my current and future research aspirations: engineering AI systems that are both <strong>responsible and efficient</strong>.</p>
+            <p>I am a 22 year-old final-year <strong>BSc student</strong> at <strong>Sharif University of Technology</strong>, majoring in computer engineering with a specialization in <strong>robustness and optimization</strong>. My research endeavors are primarily directed towards the development of trustworthy and scalable algorithms, focusing on <strong>robustness and optimization</strong>. My academic exploration broadly encompasses <strong>machine learning (ML)/deep learning (DL)</strong>, optimization theory, and algorithm design, aiming for solutions that are both <strong>efficient and resilient</strong> to various challenges. These research topics provide a solid foundation for my current and future research aspirations: engineering AI systems that are both <strong>responsible and efficient</strong>.</p>
 
             </Box>
             <Box mt={4} textAlign="left">
@@ -64,16 +66,22 @@ const App: React.FC = () => {
           </Tooltip>
         </Grid>
       </Section>
-      <Section>
-        <PapersUnderReviewSection />
-      </Section>
-      {/* <Section variant='dark'>
-        <ResearchTimeline></ResearchTimeline>
-      </Section> */}
+      </Element>
+      <Element name="Publications">
+        <Section>
+          <PapersUnderReviewSection />
+        </Section>
+      </Element>
+      <Element name="Experiences">
       <Section variant='dark'>
         <Timeline />
       </Section>
-
+      </Element>
+      <Element name="Projects">
+      <Section >
+        <Projects />
+      </Section>
+      </Element>
     </Box>
   );
 }

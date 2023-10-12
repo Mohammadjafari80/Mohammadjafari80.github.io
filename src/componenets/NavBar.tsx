@@ -16,9 +16,9 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ColorModeSwitch from "./ColorModeSwitch";
-import { NavLink, useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import "./NavBar.css";
-import { useMemo } from "react";
+import { Link } from "react-scroll";  // Import Link and Element from react-scroll
 
 const NavBar = () => {
   const padding = 10;
@@ -26,66 +26,46 @@ const NavBar = () => {
   const { colorMode } = useColorMode();
   const bgColor = colorMode === "dark" ? "#121212" : "#FFFFFF";
 
-  const location = useLocation();
-  const selectedTabIndex = useMemo(() => {
-    switch (location.pathname) {
-      case "/experiences":
-        return 1;
-      case "/publications":
-        return 2;
-      default:
-        return 0;
-    }
-  }, [location.pathname]);
+  // const location = useLocation();
+  // const selectedTabIndex = useMemo(() => {
+  //   switch (location.pathname) {
+  //     case "/experiences":
+  //       return 1;
+  //     case "/publications":
+  //       return 2;
+  //     default:
+  //       return 0;
+  //   }
+  // }, [location.pathname]);
 
   const renderMenuItems = () => (
     <>
-      {/* <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
-        <NavLink to="/About">About</NavLink>
-      </Text> */}
-      {/* <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
-        <NavLink to="/materials">Materials</NavLink>
-      </Text>
-      <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
-        <NavLink to="/assignments">Assignments</NavLink>
-      </Text> */}
-
-      <Tabs variant="unstyled" index={selectedTabIndex}>
-        <TabList>
-          <NavLink
-            to="/About"
-            className={({ isActive }) => {
-              return isActive ? "active-link" : "";
-            }}
-          >
-            <Tab fontSize={15} fontWeight={"bold"}>
-              About
-            </Tab>
-          </NavLink>
-          <NavLink
-            to="/experiences"
-            className={({ isActive }) => {
-              return isActive ? "active-link" : "";
-            }}
-          >
-            <Tab fontSize={15} fontWeight={"bold"}>
+    <Tabs variant="unstyled">
+      <TabList>
+        <Link to="About" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+          <Tab fontSize={15} fontWeight={"bold"}>
+            About
+          </Tab>
+        </Link>
+        <Link to="Publications" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+          <Tab fontSize={15} fontWeight={"bold"}>
+            Publications
+          </Tab>
+        </Link>
+        <Link to="Experiences" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+          <Tab fontSize={15} fontWeight={"bold"}>
             Experiences
-            </Tab>
-          </NavLink>
-          <NavLink
-            to="/publications"
-            className={({ isActive }) => {
-              return isActive ? "active-link" : "";
-            }}
-          >
-            <Tab fontSize={15} fontWeight={"bold"}>
-              Publications
-            </Tab>
-          </NavLink>
-        </TabList>
-        <TabIndicator mt="-40px" height="2px" bg="#d05a45" borderRadius="5px" />
-      </Tabs>
-    </>
+          </Tab>
+        </Link>
+        <Link to="Projects" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+          <Tab fontSize={15} fontWeight={"bold"}>
+            Projects
+          </Tab>
+        </Link>
+      </TabList>
+      <TabIndicator mt="-40px" height="2px" bg="#d05a45" borderRadius="5px" />
+    </Tabs>
+  </>
   );
 
   const renderDropdownMenu = () => (
@@ -93,22 +73,45 @@ const NavBar = () => {
       <MenuButton as={IconButton} icon={<HamburgerIcon />} mr={5} />
       <Portal>
         <MenuList width="100%" position="fixed" top="0" left="0" bg={bgColor}>
-          <NavLink to="/About">
-            <MenuItem bg={bgColor}>About</MenuItem>
-          </NavLink>
-          <NavLink to="/experiences">
-            <MenuItem bg={bgColor}>Experiences</MenuItem>
-          </NavLink>
-          <NavLink to="/publications">
-            <MenuItem bg={bgColor}>Publications</MenuItem>
-          </NavLink>
+          <Link to="About" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+            <MenuItem bg={bgColor} onClick={() => {
+                const burger = document.getElementById('burger');
+                if (burger) {
+                    burger.click();
+                }
+            }}>About</MenuItem>
+          </Link>
+          <Link to="Publications" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+            <MenuItem bg={bgColor} onClick={() => {
+                const burger = document.getElementById('burger');
+                if (burger) {
+                    burger.click();
+                }
+            }}>Publications</MenuItem>
+          </Link>
+          <Link to="Experiences" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+            <MenuItem bg={bgColor} onClick={() => {
+                const burger = document.getElementById('burger');
+                if (burger) {
+                    burger.click();
+                }
+            }}>Experiences</MenuItem>
+          </Link>
+          <Link to="Projects" smooth={true} duration={500}>  {/* Use Link component from react-scroll */}
+            <MenuItem bg={bgColor} onClick={() => {
+                const burger = document.getElementById('burger');
+                if (burger) {
+                    burger.click();
+                }
+            }}>Projects</MenuItem>
+          </Link>
           <MenuItem bg={bgColor}>
             <ColorModeSwitch />
           </MenuItem>
         </MenuList>
       </Portal>
     </Menu>
-  );
+);
 
   return (
     <HStack
