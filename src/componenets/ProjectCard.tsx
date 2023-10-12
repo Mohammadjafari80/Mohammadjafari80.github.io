@@ -62,7 +62,7 @@ export default function ProjectCard({
           justifyContent='center'  // Added to center the image horizontally
           _groupHover={{
               _after: {
-                  filter: 'blur(20px)',
+                  filter: 'blur(13px)',
               },
           }}
           _after={{
@@ -74,7 +74,7 @@ export default function ProjectCard({
               top: 5,
               left: 0,
               backgroundColor: `rgba(${hexToRgb(color)}, 0.15)`,
-              filter: 'blur(15px)',
+              filter: 'blur(25px)',
               zIndex: -1,
           }}
       >

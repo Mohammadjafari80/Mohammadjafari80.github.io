@@ -18,7 +18,7 @@ const Section: React.FC<SectionProps> = ({ children, variant = "light" }) => {
   return (
     <Box bg={bgColor} color={textColor} p={4} maxW="100%"  position="relative">
       <Box
-        minH='100px'
+        minH='50px'
         maxW="100%"
         pl="15px"
         pr="15px"
