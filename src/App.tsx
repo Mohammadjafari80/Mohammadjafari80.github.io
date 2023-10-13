@@ -11,6 +11,7 @@ import PapersUnderReviewSection from './sections/Papers';
 // import ResearchTimeline from './sections/ResearchTimeline';
 import Timeline from './sections/Timeline';
 import Projects from './sections/Projects'
+import VisitorMap from './componenets/VisitorsMap';
 const App: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 320, height: 320 });
 
@@ -95,7 +96,9 @@ const App: React.FC = () => {
         <a href="https://hits.seeyoufarm.com">
           <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMohammadjafari80%2FMohammadjafari80.github.io&count_bg=%23D05A45&title_bg=%23373232&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false" />
         </a>
+        <VisitorMap></VisitorMap>
       </Center>
+      
     </Section>
 
     </Box>
