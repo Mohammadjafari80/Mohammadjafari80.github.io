@@ -5,6 +5,8 @@ import React, { useEffect, useRef } from 'react';
 const VisitorMap: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);  // Specify HTMLDivElement as the ref type
 
+
+//   <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=57o2rh561g4&amp;m=0c&amp;c=e4aa42&amp;cr1=ffffff&amp;f=calibri&amp;l=49&amp;cw=3f6ee7&amp;cb=4a9c80" async="async"></script>
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
