@@ -96,9 +96,8 @@ const App: React.FC = () => {
         <a href="https://hits.seeyoufarm.com">
           <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMohammadjafari80%2FMohammadjafari80.github.io&count_bg=%23D05A45&title_bg=%23373232&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false" />
         </a>
-        <VisitorMap></VisitorMap>
       </Center>
-      
+      <VisitorMap></VisitorMap>
     </Section>
 
     </Box>
