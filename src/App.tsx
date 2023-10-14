@@ -12,6 +12,7 @@ import PapersUnderReviewSection from './sections/Papers';
 import Timeline from './sections/Timeline';
 import Projects from './sections/Projects'
 import VisitorMap from './componenets/VisitorsMap';
+import AboutMe from './componenets/AboutMe';
 const App: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 320, height: 320 });
 
@@ -53,8 +54,7 @@ const App: React.FC = () => {
               <MovingGradientText text="Mohammad Jafari" fontsize={32} />
             </Box>
             <Box mt={4} textAlign="left">
-            <p>I am a 22 year-old final-year <strong>BSc student</strong> at <strong>Sharif University of Technology</strong>, majoring in computer engineering with a specialization in <strong>robustness and optimization</strong>. My research endeavors are primarily directed towards the development of trustworthy and scalable algorithms, focusing on <strong>robustness and optimization</strong>. My academic exploration broadly encompasses <strong>machine learning (ML)/deep learning (DL)</strong>, optimization theory, and algorithm design, aiming for solutions that are both <strong>efficient and resilient</strong> to various challenges. These research topics provide a solid foundation for my current and future research aspirations: engineering AI systems that are both <strong>responsible and efficient</strong>.</p>
-
+                <AboutMe></AboutMe>
             </Box>
             <Box mt={4} textAlign="left">
               <ContactLinks></ContactLinks>

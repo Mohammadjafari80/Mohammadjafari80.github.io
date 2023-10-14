@@ -113,3 +113,8 @@
 .date-style {
   color: #004d40;  
 }
+
+.clstrm_outer {
+  overflow: hidden !important;
+}
+
