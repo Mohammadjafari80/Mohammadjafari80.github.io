@@ -10,7 +10,7 @@ const projectData = [
         image: "/images/project-images-vision_01.gif",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/Image%20morphing",
     },
 
     {
@@ -18,7 +18,7 @@ const projectData = [
         image: "/images/project-images-vision_08.png",
         tag: "Computer Vision",
         color: "#4a9c80",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ComputerVisionProjects/tree/main/Face%20Detection%20via%20HoG",
     },
 
     {
@@ -26,7 +26,7 @@ const projectData = [
         image: "/images/project-images_04.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/Hybrid-Images",
       },
 
     {
@@ -34,7 +34,7 @@ const projectData = [
         image: "/images/project-images-vision_05.gif",
         tag: "Computer Vision",
         color: "#4a9c80",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ComputerVisionProjects/tree/main/Video%20Panorama%20%26%20Processing",
     },
 
     {
@@ -42,7 +42,7 @@ const projectData = [
         image: "/images/project-images_10.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/Image%20blending",
       },
 
     {
@@ -50,7 +50,7 @@ const projectData = [
         image: "/images/project-images-vision_03.png",
         tag: "Computer Vision",
         color: "#4a9c80",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ComputerVisionProjects/tree/main/Perspective",
     },
 
     {
@@ -58,7 +58,7 @@ const projectData = [
         image: "/images/project-images-vision_07.gif",
         tag: "Computer Vision",
         color: "#4a9c80",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ComputerVisionProjects/tree/main/3D%20reconstruction",
     },
 
     {
@@ -69,14 +69,12 @@ const projectData = [
         githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
       },
 
-
-
     {
         title: "Harris Corner Detection",
         image: "/images/project-images-vision_02.png",
         tag: "Computer Vision",
         color: "#4a9c80",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ComputerVisionProjects/tree/main/Harris%20Corner%20Detection%20and%20Matching",
     },
 
     {
@@ -84,7 +82,7 @@ const projectData = [
         image: "/images/project-images-vision_06.png",
         tag: "Computer Vision",
         color: "#4a9c80",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ComputerVisionProjects/tree/main/Epipolar%20Geometry",
     },
 
     {
@@ -92,7 +90,7 @@ const projectData = [
       image: "/images/project-images_02.png",
       tag: "Image Processing",
       color: "#e4aa42",
-      githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+      githubLink: "https://github.com/Mohammadjafari80/Template-Matching",
     },
 
       {
@@ -100,7 +98,7 @@ const projectData = [
         image: "/images/project-images_08.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/Image%20Segmentation",
       },
 
       {
@@ -108,7 +106,7 @@ const projectData = [
         image: "/images/project-images_09.gif",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/Active%20Contours",
       },
 
     {
@@ -116,7 +114,7 @@ const projectData = [
         image: "/images/project-images_03.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/CamScanner",
       },
 
       {
@@ -124,7 +122,7 @@ const projectData = [
         image: "/images/project-images_05.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/Detect%20Lines%20via%20Hough%20Transform",
       },
 
       {
@@ -132,7 +130,7 @@ const projectData = [
         image: "/images/project-images_06.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/Texture-Synthesis",
       },
 
       {
@@ -140,7 +138,7 @@ const projectData = [
         image: "/images/project-images_07.png",
         tag: "Image Processing",
         color: "#e4aa42",
-        githubLink: "https://github.com/Mohammadjafari80/Prokudin-Goskii-Images",
+        githubLink: "https://github.com/Mohammadjafari80/ImageProcessingProjects/tree/main/Image%20completion%20and%20hole%20filling",
       },
 
 

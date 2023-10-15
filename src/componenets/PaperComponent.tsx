@@ -41,14 +41,14 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
           <Text as="span" style={{ backgroundColor: color, color: '#ffffff', padding: '2px 4px', borderRadius: '4px' }}>{conference}</Text>
           <Tag ml={2} size="md" colorScheme="gray" variant="solid">{status}</Tag>
         </ListItem>
-        <ListItem>
+        { status == 'Under Review' && <ListItem>
           <Icon as={FaLink} mr={2} />
           {link ? (
             <Text as="a" href={link}>{link}</Text>
           ) : (
             <Text as="span">[Access Upon Request]</Text>
           )}
-        </ListItem>
+        </ListItem>}
       </List>
     </Box>
   );

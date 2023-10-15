@@ -62,7 +62,7 @@ const App: React.FC = () => {
           </Box>
           <Tooltip label={"This rendering represents a picture of me, achieved through the utilization of the Fourier series to approximate a continuous signal. It visualizes the concept using epicycles - rotating vectors placed end-to-end, with the Fourier series helping in determining the magnitude and initial position of each vector. The model is inspired by a video from 3Blue1Brown that explains and demonstrates this topic."} aria-label="A tooltip">
             <Box order={{ base: 1, md: 2 }}>
-              <FourierVis timePerPoint={20} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
+              <FourierVis timePerPoint={40} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
             </Box>
           </Tooltip>
         </Grid>
