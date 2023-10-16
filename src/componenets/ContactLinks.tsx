@@ -15,7 +15,7 @@ const ContactLinks = () => {
         m={1}
         p={2}
         as="a"
-        href="mailto:mamad.jafari91@gmail.com"
+        href="mailto:mohammad.jafari.varnous.2001@gmail.com"
       >
         <FaEnvelope style={{ marginRight: '12px' }} />
         Email
@@ -29,7 +29,7 @@ const ContactLinks = () => {
         m={1}
         p={2}
         as="a"
-        href="/path-to-your-cv.pdf"
+        href="/CV-MohammadJafari.pdf"
       >
         <FaFilePdf style={{ marginRight: '12px' }} />
         CV
