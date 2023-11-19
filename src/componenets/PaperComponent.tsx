@@ -1,7 +1,7 @@
 // src/components/PaperComponent.tsx
 import React from 'react';
-import { Box, Text, List, ListItem, Icon, Tag } from "@chakra-ui/react";
-import { FaBook, FaUsers, FaLink } from 'react-icons/fa';
+import { Box, Text, List, ListItem, Icon, Tag, Link, useColorMode } from "@chakra-ui/react";
+import { FaBook, FaUsers, FaLink, FaInfoCircle } from 'react-icons/fa';
 
 interface PaperComponentProps {
   title: string;
@@ -10,6 +10,9 @@ interface PaperComponentProps {
   color: string;
   status?: string;
   link?: string;
+  linkText?: string;  // Optional property for link text
+  linkTagColor?: string; // Optional property for link tag color (hex code)
+  description?: string;  // Optional property for a description
 }
 
 const PaperComponent: React.FC<PaperComponentProps> = ({
@@ -18,8 +21,13 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
   conference,
   color,
   status = 'Under Review',
-  link
+  link,
+  linkText,
+  linkTagColor = '#3182ce', // Default hex color for the link tag
+  description
 }) => {
+  const { colorMode } = useColorMode();
+  const descriptionColor = colorMode === 'dark' ? 'gray.200' : 'gray.600';
   const styledAuthors = authors.replace(
     /Mohammad Jafari/g,
     '<span style="font-weight: bold; font-style: italic;">Mohammad Jafari</span>'
@@ -37,17 +45,19 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
           <Text as="kbd" dangerouslySetInnerHTML={{ __html: styledAuthors }} />
         </ListItem>
         <ListItem>
-          {/* Custom color highlighting for conference name */}
           <Text as="span" style={{ backgroundColor: color, color: '#ffffff', padding: '2px 4px', borderRadius: '4px' }}>{conference}</Text>
           <Tag ml={2} size="md" colorScheme="gray" variant="solid">{status}</Tag>
         </ListItem>
-        { status == 'Under Review' && <ListItem>
+        {link && <ListItem display="flex" alignItems="center">
           <Icon as={FaLink} mr={2} />
-          {link ? (
-            <Text as="a" href={link}>{link}</Text>
-          ) : (
-            <Text as="span">[Access Upon Request]</Text>
-          )}
+          <Text as="span">Paper Link:</Text>
+          <Tag ml={2} bg={linkTagColor} color="white">
+            <Link href={link} isExternal style={{ fontVariant: 'small-caps' }}>{linkText || 'More Info'}</Link>
+          </Tag>
+        </ListItem>}
+        {description && <ListItem>
+          <Icon as={FaInfoCircle} mr={2} />
+          <Text as="i" color={descriptionColor}>{description}</Text>
         </ListItem>}
       </List>
     </Box>

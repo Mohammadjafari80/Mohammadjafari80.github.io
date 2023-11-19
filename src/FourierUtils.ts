@@ -259,18 +259,18 @@ class FourierDiagram {
         
         // Trigger the fade-in and transform animation after a brief delay
         setTimeout(() => {
-            image.style.opacity = '0.15'; 
+            image.style.opacity = '0.1'; 
         }, 1);
     
         // Add event listeners for mouseenter and mouseleave
         image.addEventListener('mouseenter', () => {
             // image.style.transition = 'opacity 0.5s';  // Set transition duration for fade-out
-            image.style.opacity = '0.4';  // Set opacity for fade-out
+            image.style.opacity = '0.7';  // Set opacity for fade-out
         });
         
         image.addEventListener('mouseleave', () => {
             // image.style.transition = 'opacity 0.5s';  // Set transition duration for fade-in
-            image.style.opacity = '0.15';  // Reset opacity to original value for fade-in
+            image.style.opacity = '0.1';  // Reset opacity to original value for fade-in
         });
     }
     

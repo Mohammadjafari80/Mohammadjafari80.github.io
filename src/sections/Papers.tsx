@@ -8,24 +8,28 @@ const PapersUnderReviewSection: React.FC = () => {
     <Box>
       <Heading mb={8}>Publications</Heading>
       <PaperComponent
-        title="Unsupervised Out-of-Distribution Detection in High-Variation Settings"
+        title="Unsupervised Out-of-Distribution Detection: From Low to High Inlier Variation"
         authors="Hossein Mirzaei, Mohammad Jafari*, Mojtaba Nafez*, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="CVPR 2024"
         color='#3f6ee7'
-        status='To be Submitted'
+        // status='Submitted'
       />
       <PaperComponent
-        title="Contrast and Conquer: A Universal Approach to Anomaly Detection"
+        title="Universal Novelty Detection Through Adaptive Contrastive Learning"
         authors="Hossein Mirzaei, Mojtaba Nafez, Mohammad Jafari, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="CVPR 2024"
         color='#3f6ee7'
-        status='To be Submitted'
+        // status='Submitted'
       />
       <PaperComponent
         title="RODEO: Robust Out-of-Distribution Detection Via Exposing Adaptive Outliers"
         authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Ali Ansari, Sepehr Ghobadi, Masoud Hadi, Arshia Soltani Moakhar, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban"
         conference="ICLR 2024"
+        link='https://openreview.net/forum?id=Tc3duzOHa8'
+        linkText='Open Review'
+        linkTagColor='#80261b'
         color='#d05a45'
+        description='The initial scores are 8, 6, 6, 5.'
       />
       {/* ... other paper components */}
       <PaperComponent
