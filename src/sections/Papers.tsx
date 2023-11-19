@@ -29,7 +29,7 @@ const PapersUnderReviewSection: React.FC = () => {
         linkText='Open Review'
         linkTagColor='#80261b'
         color='#d05a45'
-        description='The initial scores are 8, 6, 6, 5.'
+        description='The initial scores are 8, 6, 6, 6.'
       />
       {/* ... other paper components */}
       <PaperComponent
