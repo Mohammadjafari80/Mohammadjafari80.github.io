@@ -37,12 +37,14 @@ const PapersUnderReviewSection: React.FC = () => {
         authors="Mohammad Jafari, Yimeng Zhang, Yihua Zhang, Sijia Liu"
         conference="ICASSP 2024"
         color='#e4aa42'
+        status='Accepted'
       />
       <PaperComponent
         title="Killing it with Zero-Shot: Adversarially Robust Novelty Detection"
         authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Zeinab Sadat Taghavi, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="ICASSP 2024"
         color='#e4aa42'
+        status='Accepted'
       />
       <PaperComponent
         title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"

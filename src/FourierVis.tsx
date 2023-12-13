@@ -14,6 +14,11 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
     const [path, setPath] = useState<[number, number][]>([]);
     const colors = ["rgb(63, 110, 231)", "rgba(208, 90, 69)", "rgba(74, 156, 128)"];
 
+    // Function to check if the current device is iOS or iPadOS
+    const isIOSOrIPadOS = () => {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    }
+
     useEffect(() => {
         // Fetch the path from the provided txt file path
         fetch(filePath)
@@ -29,11 +34,22 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
     }, [filePath]);
 
     useEffect(() => {
-        if (divRef.current && path.length > 0) {
-            const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
-            diagram.draw('/portfolio.png');
+        // Ensure divRef.current is not null
+        if (divRef.current) {
+            if (isIOSOrIPadOS()) {
+                // For iOS or iPadOS, use transitionToImage
+                const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
+                diagram.transitionToImage('/portfolio.png');
+            } else {
+                // For other devices, perform the animation
+                if (path.length > 0) {
+                    const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
+                    diagram.draw('/portfolio.png');
+                }
+            }
         }
-    }, [path, timePerPoint]);
+    }, [path, timePerPoint, divRef, isIOSOrIPadOS]);
+    
 
     return (
         <div ref={containerRef} style={{
@@ -43,16 +59,22 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
             width: '100%',
             height: '100%',
         }}>
-            <div style={{
-                overflow: 'hidden',
-                width: width,
-                height: height,
-            }}>
-                <div ref={divRef} style={{
-                    transform: 'scale(1)',  // Zoom factor
-                    transformOrigin: 'center center',  // Zoom from the center
-                }}></div>
-            </div>
+            {isIOSOrIPadOS() ? (
+                // Display a static image for iOS and iPadOS
+                <img src="/portfolio.png" alt="Fourier Visualization" style={{ width: width, height: height }} />
+            ) : (
+                // Render the animated diagram for other devices
+                <div style={{
+                    overflow: 'hidden',
+                    width: width,
+                    height: height,
+                }}>
+                    <div ref={divRef} style={{
+                        transform: 'scale(1)',
+                        transformOrigin: 'center center',
+                    }}></div>
+                </div>
+            )}
         </div>
     );
 }

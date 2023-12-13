@@ -32,6 +32,25 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
     /Mohammad Jafari/g,
     '<span style="font-weight: bold; font-style: italic;">Mohammad Jafari</span>'
   );
+  
+  const getStatusTagStyles = (status: string) => {
+    if (status === 'Accepted') {
+      return {
+        colorScheme: 'green',
+        style: {
+          fontWeight: 'bold',
+          boxShadow: '0px 0px 10px 2px rgba(50, 205, 50, 0.6)', // Glow effect
+        },
+      };
+    }
+    // Default styles for other statuses
+    return {
+      colorScheme: 'gray',
+      style: {},
+    };
+  };
+
+  const statusStyles = getStatusTagStyles(status);
 
   return (
     <Box textAlign={'left'} mb={4} pl={4}>
@@ -46,7 +65,7 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
         </ListItem>
         <ListItem>
           <Text as="span" style={{ backgroundColor: color, color: '#ffffff', padding: '2px 4px', borderRadius: '4px' }}>{conference}</Text>
-          <Tag ml={2} size="md" colorScheme="gray" variant="solid">{status}</Tag>
+          <Tag ml={2} size="md" {...statusStyles} variant="solid">{status}</Tag>
         </ListItem>
         {link && <ListItem display="flex" alignItems="center">
           <Icon as={FaLink} mr={2} />
