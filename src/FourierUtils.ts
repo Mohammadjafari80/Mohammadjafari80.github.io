@@ -94,6 +94,7 @@ class FourierDiagram {
         this.transform = FourierDiagram.getTransform(this.polyline, colors);
         this.width = width
         this.height = height
+        this.diagram.innerHTML = "";
     }
 
     static waitForFrame(): Promise<number> {

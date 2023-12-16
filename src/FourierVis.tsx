@@ -38,8 +38,8 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
         if (divRef.current) {
             if (isIOSOrIPadOS()) {
                 // For iOS or iPadOS, use transitionToImage
-                const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
-                diagram.transitionToImage('/portfolio.png');
+                // const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
+                // diagram.transitionToImage('/portfolio.png');
             } else {
                 // For other devices, perform the animation
                 if (path.length > 0) {
@@ -61,7 +61,7 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
         }}>
             {isIOSOrIPadOS() ? (
                 // Display a static image for iOS and iPadOS
-                <img src="/portfolio.png" alt="Fourier Visualization" style={{ width: width, height: height }} />
+                <img src="/portfolio.png" alt="Fourier Visualization" style={{ width: width, height: height, borderRadius: '50%' }} />
             ) : (
                 // Render the animated diagram for other devices
                 <div style={{
