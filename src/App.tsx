@@ -13,6 +13,13 @@ import Timeline from './sections/Timeline';
 import Projects from './sections/Projects'
 import VisitorMap from './componenets/VisitorsMap';
 import AboutMe from './componenets/AboutMe';
+import MySVGComponent from './componenets/MySVGComponent';
+
+const isIOS = () => {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+
 const App: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 320, height: 320 });
 
@@ -42,6 +49,23 @@ const App: React.FC = () => {
     };
   }, []);
 
+
+  const renderVisualization = () => {
+    if (!isIOS()) {
+      return <Tooltip label={"This rendering represents a picture of me, achieved through the utilization of the Fourier series to approximate a continuous signal. It visualizes the concept using epicycles - rotating vectors placed end-to-end, with the Fourier series helping in determining the magnitude and initial position of each vector. The model is inspired by a video from 3Blue1Brown that explains and demonstrates this topic."} aria-label="A tooltip">
+                <Box order={{ base: 1, md: 2 }}>
+                  <FourierVis timePerPoint={40} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
+                </Box>
+              </Tooltip>
+    ;
+    } else {
+      return <Box mb={{base: 5, md: 0 }} order={{ base: 1, md: 2 }}>
+          <MySVGComponent></MySVGComponent>
+        </Box>
+      ;
+    }
+  };
+
   return (
     <Box>
       <NavBar />
@@ -60,11 +84,7 @@ const App: React.FC = () => {
               <ContactLinks></ContactLinks>
             </Box>
           </Box>
-          <Tooltip label={"This rendering represents a picture of me, achieved through the utilization of the Fourier series to approximate a continuous signal. It visualizes the concept using epicycles - rotating vectors placed end-to-end, with the Fourier series helping in determining the magnitude and initial position of each vector. The model is inspired by a video from 3Blue1Brown that explains and demonstrates this topic."} aria-label="A tooltip">
-            <Box order={{ base: 1, md: 2 }}>
-              <FourierVis timePerPoint={40} filePath="/points.txt" width={dimensions.width} height={dimensions.height} />
-            </Box>
-          </Tooltip>
+          {renderVisualization()}
         </Grid>
       </Section>
       </Element>
