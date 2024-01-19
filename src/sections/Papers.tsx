@@ -8,6 +8,13 @@ const PapersUnderReviewSection: React.FC = () => {
     <Box>
       <Heading mb={8}>Publications</Heading>
       <PaperComponent
+        title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
+        authors="Hossein Mirzaei, Mohammad Jafari*, Hamid Reza Dehbashi*, Mohammad Hossein Rohban"
+        conference="ECCV 2024"
+        status='To Be Submitted'
+        color='#4a9c80'
+      />
+      <PaperComponent
         title="Unsupervised Out-of-Distribution Detection: From Low to High Inlier Variation"
         authors="Hossein Mirzaei, Mohammad Jafari*, Mojtaba Nafez*, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="CVPR 2024"
@@ -29,6 +36,7 @@ const PapersUnderReviewSection: React.FC = () => {
         linkText='Open Review'
         linkTagColor='#80261b'
         color='#d05a45'
+        status=''
         description='The initial scores are 8, 6, 6, 6.'
       />
       {/* ... other paper components */}
@@ -45,12 +53,6 @@ const PapersUnderReviewSection: React.FC = () => {
         conference="ICASSP 2024"
         color='#e4aa42'
         status='Accepted'
-      />
-      <PaperComponent
-        title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
-        authors="Hossein Mirzaei, Mohammad Jafari*, Hamid Reza Dehbashi*, Mohammad Hossein Rohban"
-        conference="AAAI 2024"
-        color='#4a9c80'
       />
     </Box>
   );

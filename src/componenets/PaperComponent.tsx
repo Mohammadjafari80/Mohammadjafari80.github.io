@@ -65,7 +65,7 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
         </ListItem>
         <ListItem>
           <Text as="span" style={{ backgroundColor: color, color: '#ffffff', padding: '2px 4px', borderRadius: '4px' }}>{conference}</Text>
-          <Tag ml={2} size="md" {...statusStyles} variant="solid">{status}</Tag>
+          {status && <Tag ml={2} size="md" {...statusStyles} variant="solid">{status}</Tag>}
         </ListItem>
         {link && <ListItem display="flex" alignItems="center">
           <Icon as={FaLink} mr={2} />
