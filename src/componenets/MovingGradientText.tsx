@@ -17,20 +17,12 @@ const MovingGradientText: React.FC<Props> = ({
   span = false, // Default value for span is false
   textTransform = 'none', // Default value for textTransform is 'none'
 }) => {
-  const shuffleArray = (array: string[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-    }
-    return array;
-  };
-
-  const [gradientColors] = useState(() => shuffleArray([
+  const [gradientColors] = useState([
     "#d05a45", // Color 1
     "#e4aa42", // Color 2
     "#3f6ee7", // Color 3
     "#4a9c80", // Color 4
-  ]));
+  ]);
 
   const getColorShiftKeyframes = () => {
     let keyframeStr = "";

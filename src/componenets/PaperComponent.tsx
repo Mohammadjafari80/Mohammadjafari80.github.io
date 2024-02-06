@@ -2,19 +2,6 @@
 import React from 'react';
 import { Box, Text, List, ListItem, Icon, Tag, Link, useColorMode } from "@chakra-ui/react";
 import { FaBook, FaUsers, FaLink, FaInfoCircle } from 'react-icons/fa';
-import MovingGradientText from './MovingGradientText'; // Ensure this path is correct
-
-interface PaperComponentProps {
-  title: string;
-  authors: string;
-  conference: string;
-  color: string;
-  status?: string;
-  link?: string;
-  linkText?: string;
-  linkTagColor?: string;
-  description?: string;
-}
 
 const PaperComponent: React.FC<PaperComponentProps> = ({
   title,
@@ -30,25 +17,56 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
   const { colorMode } = useColorMode();
   const descriptionColor = colorMode === 'dark' ? 'gray.200' : 'gray.600';
 
-  // Split authors by comma to individually check and render each name
   const authorElements = authors.split(',').map((author, index, array) => {
-    // Trim the author name to remove any leading/trailing spaces
     author = author.trim();
     const isMohammadJafari = author.includes("Mohammad Jafari");
-    const notLastAuthor = index < array.length - 1; // Check if this author is not the last in the list
-  
+    const notLastAuthor = index < array.length - 1;
+
+    // Function to convert hex color to RGBA
+    const hexToRGBA = (hex: string, opacity: number) => {
+      let r = 0, g = 0, b = 0;
+      // 3 digits
+      if (hex.length === 4) {
+        r = parseInt(hex[1] + hex[1], 16);
+        g = parseInt(hex[2] + hex[2], 16);
+        b = parseInt(hex[3] + hex[3], 16);
+      }
+      // 6 digits
+      else if (hex.length === 7) {
+        r = parseInt(hex[1] + hex[2], 16);
+        g = parseInt(hex[3] + hex[4], 16);
+        b = parseInt(hex[5] + hex[6], 16);
+      }
+      return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+    };
+
+
     return (
       <React.Fragment key={index}>
         {isMohammadJafari ? (
-          <MovingGradientText text={author} fontsize={18} fontFamily='"Roboto Mono", monospace' span={true} textTransform='capitalize' />
+          <Box position="relative" display="inline-block">
+            <Text as="span" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>
+              {author}
+            </Text>
+            <Text as="span" style={{
+              fontWeight: 'bold',
+              fontStyle: 'italic',
+              color: hexToRGBA(color, 0.6),
+              position: 'absolute',
+              left: 0,
+              top: 0,
+            }}>
+              {author}
+            </Text>
+          </Box>
         ) : (
           <span>{author}</span>
         )}
-        {/* Add a comma and space if this is not the last author */}
         {notLastAuthor && ", "}
       </React.Fragment>
     );
   });
+
   
 
   const statusStyles = getStatusTagStyles(status);
