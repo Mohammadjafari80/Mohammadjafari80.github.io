@@ -2,6 +2,7 @@
 import React from 'react';
 import { Box, Text, List, ListItem, Icon, Tag, Link, useColorMode } from "@chakra-ui/react";
 import { FaBook, FaUsers, FaLink, FaInfoCircle } from 'react-icons/fa';
+import MovingGradientText from './MovingGradientText'; // Ensure this path is correct
 
 interface PaperComponentProps {
   title: string;
@@ -10,9 +11,9 @@ interface PaperComponentProps {
   color: string;
   status?: string;
   link?: string;
-  linkText?: string;  // Optional property for link text
-  linkTagColor?: string; // Optional property for link tag color (hex code)
-  description?: string;  // Optional property for a description
+  linkText?: string;
+  linkTagColor?: string;
+  description?: string;
 }
 
 const PaperComponent: React.FC<PaperComponentProps> = ({
@@ -23,32 +24,32 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
   status = 'Under Review',
   link,
   linkText,
-  linkTagColor = '#3182ce', // Default hex color for the link tag
+  linkTagColor = '#3182ce',
   description
 }) => {
   const { colorMode } = useColorMode();
   const descriptionColor = colorMode === 'dark' ? 'gray.200' : 'gray.600';
-  const styledAuthors = authors.replace(
-    /Mohammad Jafari/g,
-    '<span style="font-weight: bold; font-style: italic;">Mohammad Jafari</span>'
-  );
+
+  // Split authors by comma to individually check and render each name
+  const authorElements = authors.split(',').map((author, index, array) => {
+    // Trim the author name to remove any leading/trailing spaces
+    author = author.trim();
+    const isMohammadJafari = author.includes("Mohammad Jafari");
+    const notLastAuthor = index < array.length - 1; // Check if this author is not the last in the list
   
-  const getStatusTagStyles = (status: string) => {
-    if (status === 'Accepted') {
-      return {
-        colorScheme: 'green',
-        style: {
-          fontWeight: 'bold',
-          boxShadow: '0px 0px 10px 2px rgba(50, 205, 50, 0.6)', // Glow effect
-        },
-      };
-    }
-    // Default styles for other statuses
-    return {
-      colorScheme: 'gray',
-      style: {},
-    };
-  };
+    return (
+      <React.Fragment key={index}>
+        {isMohammadJafari ? (
+          <MovingGradientText text={author} fontsize={18} fontFamily='"Roboto Mono", monospace' span={true} textTransform='capitalize' />
+        ) : (
+          <span>{author}</span>
+        )}
+        {/* Add a comma and space if this is not the last author */}
+        {notLastAuthor && ", "}
+      </React.Fragment>
+    );
+  });
+  
 
   const statusStyles = getStatusTagStyles(status);
 
@@ -61,7 +62,8 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
         </ListItem>
         <ListItem>
           <Icon as={FaUsers} mr={2} />
-          <Text as="kbd" dangerouslySetInnerHTML={{ __html: styledAuthors }} />
+          {/* Render author elements here */}
+          <Text as="kbd">{authorElements}</Text>
         </ListItem>
         <ListItem>
           <Text as="span" style={{ backgroundColor: color, color: '#ffffff', padding: '2px 4px', borderRadius: '4px' }}>{conference}</Text>
@@ -82,5 +84,22 @@ const PaperComponent: React.FC<PaperComponentProps> = ({
     </Box>
   );
 };
+
+function getStatusTagStyles(status: string) {
+  if (status === 'Accepted') {
+    return {
+      colorScheme: 'green',
+      style: {
+        fontWeight: 'bold',
+        boxShadow: '0px 0px 10px 2px rgba(50, 205, 50, 0.6)', // Glow effect
+      },
+    };
+  }
+  // Default styles for other statuses
+  return {
+    colorScheme: 'gray',
+    style: {},
+  };
+}
 
 export default PaperComponent;

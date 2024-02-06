@@ -1,20 +1,36 @@
-// MovingGradientText.tsx
 import React, { useState } from "react";
 import { Text, Box } from "@chakra-ui/react";
 import { css, keyframes } from "@emotion/react";
-import '../index.css'
+
 interface Props {
   text: string;
-  fontsize: number
+  fontsize: number;
+  fontFamily?: string; // Optional prop for specifying font family
+  span?: boolean; // Optional prop to wrap text in a span to prevent line breaks
+  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase' | 'initial' | 'inherit'; // Added prop for text transformation
 }
 
-const MovingGradientText: React.FC<Props> = ({ text, fontsize}) => {
-  const [gradientColors] = useState([
+const MovingGradientText: React.FC<Props> = ({
+  text,
+  fontsize,
+  fontFamily = 'PixelifySans', // Default font family
+  span = false, // Default value for span is false
+  textTransform = 'none', // Default value for textTransform is 'none'
+}) => {
+  const shuffleArray = (array: string[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+  };
+
+  const [gradientColors] = useState(() => shuffleArray([
     "#d05a45", // Color 1
     "#e4aa42", // Color 2
     "#3f6ee7", // Color 3
     "#4a9c80", // Color 4
-  ]);
+  ]));
 
   const getColorShiftKeyframes = () => {
     let keyframeStr = "";
@@ -38,6 +54,8 @@ const MovingGradientText: React.FC<Props> = ({ text, fontsize}) => {
       color: ${initialColor};
       animation: ${ColorShift} ${gradientColors.length}s ease-in-out infinite;
       animation-delay: ${animationDelay}s;
+      font-family: ${fontFamily}; // Apply custom font
+      text-transform: ${textTransform}; // Apply text transformation
     `;
   };
 
@@ -47,8 +65,6 @@ const MovingGradientText: React.FC<Props> = ({ text, fontsize}) => {
         as="span"
         fontSize={`${fontsize}px`}
         fontWeight="bold"
-        fontFamily='PixelifySans'
-        textTransform="uppercase"
         css={letterStyle(index)}
         key={`letter-${index}`}
       >
@@ -57,7 +73,11 @@ const MovingGradientText: React.FC<Props> = ({ text, fontsize}) => {
     ));
   };
 
-  return <Box>{renderLetters()}</Box>;
+  return span ? (
+    <span style={{ whiteSpace: 'nowrap' }}>{renderLetters()}</span>
+  ) : (
+    <Box>{renderLetters()}</Box>
+  );
 };
 
 export default MovingGradientText;

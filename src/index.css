@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'Matcha';
+  src: url('./assets/matcha.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'PixelifySans';
   src: url('./assets/PixelifySans-Bold.ttf') format('truetype');
   font-weight: bold;
@@ -30,6 +35,15 @@
   font-weight: 500;
   font-style: normal;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&italic=true&display=swap');
+
+.roboto-mono-bold-italic {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700; /* Bold */
+  font-style: italic; /* Italic */
+}
+
 
 /* For Webkit browsers like Chrome/Safari */
 ::-webkit-scrollbar {

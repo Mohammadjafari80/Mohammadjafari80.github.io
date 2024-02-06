@@ -75,7 +75,7 @@ const App: React.FC = () => {
           <Box order={{ base: 2, md: 1 }}>
             <Box display="flex" alignItems="baseline" gap="0.5rem" whiteSpace="nowrap" textAlign="left">
               <Text fontSize="md">Hi, I'm </Text>
-              <MovingGradientText text="Mohammad Jafari" fontsize={32} />
+              <MovingGradientText text="Mohammad Jafari" fontsize={32} textTransform='uppercase'/>
             </Box>
             <Box mt={4} textAlign="left">
                 <AboutMe></AboutMe>
