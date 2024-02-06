@@ -3,6 +3,19 @@ import React from 'react';
 import { Box, Text, List, ListItem, Icon, Tag, Link, useColorMode } from "@chakra-ui/react";
 import { FaBook, FaUsers, FaLink, FaInfoCircle } from 'react-icons/fa';
 
+interface PaperComponentProps {
+  title: string;
+  authors: string;
+  conference: string;
+  color: string;
+  status?: string;
+  link?: string;
+  linkText?: string;
+  linkTagColor?: string;
+  description?: string;
+}
+
+
 const PaperComponent: React.FC<PaperComponentProps> = ({
   title,
   authors,
