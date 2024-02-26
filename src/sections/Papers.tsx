@@ -17,16 +17,16 @@ const PapersUnderReviewSection: React.FC = () => {
       <PaperComponent
         title="Unsupervised Out-of-Distribution Detection: From Low to High Inlier Variation"
         authors="Hossein Mirzaei, Mohammad Jafari*, Mojtaba Nafez*, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
-        conference="CVPR 2024"
-        color='#3f6ee7'
-        // status='Submitted'
+        conference="ECCV 2024"
+        status='To Be Submitted'
+        color='#4a9c80'
       />
       <PaperComponent
         title="Universal Novelty Detection Through Adaptive Contrastive Learning"
         authors="Hossein Mirzaei, Mojtaba Nafez, Mohammad Jafari, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="CVPR 2024"
         color='#3f6ee7'
-        // status='Submitted'
+        status='Accepted'
       />
       <PaperComponent
         title="RODEO: Robust Out-of-Distribution Detection Via Exposing Adaptive Outliers"
