@@ -9,16 +9,16 @@ const PapersUnderReviewSection: React.FC = () => {
       <Heading mb={8}>Publications</Heading>
       <PaperComponent
         title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
-        authors="Hossein Mirzaei, Mohammad Jafari*, Hamid Reza Dehbashi*, Mohammad Hossein Rohban"
+        authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Mohammad Hossein Rohban"
         conference="ECCV 2024"
-        status='To Be Submitted'
+        status='Submitted'
         color='#4a9c80'
       />
       <PaperComponent
         title="Unsupervised Out-of-Distribution Detection: From Low to High Inlier Variation"
         authors="Hossein Mirzaei, Mohammad Jafari*, Mojtaba Nafez*, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="ECCV 2024"
-        status='To Be Submitted'
+        status='Submitted'
         color='#4a9c80'
       />
       <PaperComponent
