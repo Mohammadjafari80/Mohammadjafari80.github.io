@@ -43,6 +43,9 @@ const PapersUnderReviewSection: React.FC = () => {
       <PaperComponent
         title="The Power of Few: Accelerating and Enhancing Data Reweighting with Coreset Selection"
         authors="Mohammad Jafari, Yimeng Zhang, Yihua Zhang, Sijia Liu"
+        link='https://arxiv.org/abs/2403.12166'
+        linkText='arXiv'
+        linkTagColor='#B31B1B'
         conference="ICASSP 2024"
         color='#e4aa42'
         status='Accepted'
