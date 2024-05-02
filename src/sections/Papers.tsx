@@ -8,6 +8,17 @@ const PapersUnderReviewSection: React.FC = () => {
     <Box>
       <Heading mb={8}>Publications</Heading>
       <PaperComponent
+        title="RODEO: Robust Out-of-Distribution Detection Via Exposing Adaptive Outliers"
+        authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Ali Ansari, Sepehr Ghobadi, Masoud Hadi, Arshia Soltani Moakhar, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban"
+        conference="ICML 2024"
+        // link='https://openreview.net/forum?id=Tc3duzOHa8'
+        // linkText='Open Review'
+        // linkTagColor='#80261b'
+        color='#d05a45'
+        status='Accepted'
+        description='The initial scores are 8, 6, 6, 6.'
+      />
+      <PaperComponent
         title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
         authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Mohammad Hossein Rohban"
         conference="ECCV 2024"
@@ -27,17 +38,6 @@ const PapersUnderReviewSection: React.FC = () => {
         conference="CVPR 2024"
         color='#3f6ee7'
         status='Accepted'
-      />
-      <PaperComponent
-        title="RODEO: Robust Out-of-Distribution Detection Via Exposing Adaptive Outliers"
-        authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Ali Ansari, Sepehr Ghobadi, Masoud Hadi, Arshia Soltani Moakhar, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban"
-        conference="ICLR 2024"
-        link='https://openreview.net/forum?id=Tc3duzOHa8'
-        linkText='Open Review'
-        linkTagColor='#80261b'
-        color='#d05a45'
-        status=''
-        description='The initial scores are 8, 6, 6, 6.'
       />
       {/* ... other paper components */}
       <PaperComponent
