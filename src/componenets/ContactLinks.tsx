@@ -29,7 +29,7 @@ const ContactLinks = () => {
         m={1}
         p={2}
         as="a"
-        href="/CV-MohammadJafari.pdf"
+        href="/CV_MohammadJafari.pdf"
       >
         <FaFilePdf style={{ marginRight: '12px' }} />
         CV

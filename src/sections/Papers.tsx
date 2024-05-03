@@ -16,7 +16,6 @@ const PapersUnderReviewSection: React.FC = () => {
         // linkTagColor='#80261b'
         color='#d05a45'
         status='Accepted'
-        description='The initial scores are 8, 6, 6, 6.'
       />
       <PaperComponent
         title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
