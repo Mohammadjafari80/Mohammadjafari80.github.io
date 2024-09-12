@@ -104,14 +104,7 @@ const App: React.FC = () => {
       </Section>
       </Element>
       <Section>
-      <Box textAlign="center" mb={8}>
-        <Text fontSize="sm">
-          Designed by Mohammad Jafari. All rights reserved.
-        </Text>
-        <Text fontSize="sm">
-          This design is original and created for personal use.
-        </Text>
-      </Box>
+      
       <Center>
         <a href="https://hits.seeyoufarm.com">
           <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMohammadjafari80%2FMohammadjafari80.github.io&count_bg=%23D05A45&title_bg=%23373232&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false" />
@@ -127,3 +120,11 @@ const App: React.FC = () => {
 }
 
 export default App;
+<Box textAlign="center" mb={8}>
+        <Text fontSize="sm">
+          Designed by Mohammad Jafari. All rights reserved.
+        </Text>
+        <Text fontSize="sm">
+          This design is original and created for personal use.
+        </Text>
+      </Box>

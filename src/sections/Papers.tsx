@@ -16,8 +16,11 @@ const PapersUnderReviewSection: React.FC = () => {
         // linkTagColor='#80261b'
         color='#d05a45'
         status='Accepted'
+        link='https://rohban-lab.github.io/rodeo/'
+        linkText='RODEO'
+        linkTagColor='#B31B1B'
       />
-      <PaperComponent
+      {/* <PaperComponent
         title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
         authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Mohammad Hossein Rohban"
         conference="ECCV 2024"
@@ -30,13 +33,16 @@ const PapersUnderReviewSection: React.FC = () => {
         conference="ECCV 2024"
         status='Submitted'
         color='#4a9c80'
-      />
+      /> */}
       <PaperComponent
         title="Universal Novelty Detection Through Adaptive Contrastive Learning"
         authors="Hossein Mirzaei, Mojtaba Nafez, Mohammad Jafari, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
         conference="CVPR 2024"
         color='#3f6ee7'
         status='Accepted'
+        link='https://www.arxiv.org/abs/2408.10798'
+        linkText='arXiv'
+        linkTagColor='#B31B1B'
       />
       {/* ... other paper components */}
       <PaperComponent

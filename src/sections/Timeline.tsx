@@ -19,7 +19,7 @@ const events: Event[] = [
     labLink: "https://www.optml-group.com/",
     description: "Explored hyperparameter optimization, dataset pruning, and reweighting at OPTML Group under Prof. Sijia Liu during Summer 2023, leading to a paper submission to ICASSP2024.",
     imageUrl: "/optml.png",
-    date: "Summer 2023, Now",
+    date: "Summer 2023 - Spring 2024",
   },
   {
     title: "RIML Lab",
@@ -27,7 +27,7 @@ const events: Event[] = [
     labLink: "https://github.com/rohban-lab",
     description: "Studied anomaly and OOD detection, and robustness in these scenarios at RIML Lab under Prof. Rohban since Winter 2022, resulting in papers submitted to AAAI2024, ICASSP2024, and ICLR2024.",
     imageUrl: "/riml.png",
-    date: "Winter 2022, Now",
+    date: "Winter 2022 - Summer 2024",
   },
 ];
 
