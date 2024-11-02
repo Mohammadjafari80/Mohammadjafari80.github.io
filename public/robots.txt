@@ -1,0 +1,6 @@
+# robots.txt file for Mohammad Jafari's Portfolio on GitHub Pages
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mohammadjafari80.github.io/sitemap.xml

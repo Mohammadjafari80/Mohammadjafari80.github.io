@@ -5,17 +5,17 @@ import { css, keyframes } from "@emotion/react";
 interface Props {
   text: string;
   fontsize: number;
-  fontFamily?: string; // Optional prop for specifying font family
-  span?: boolean; // Optional prop to wrap text in a span to prevent line breaks
-  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase' | 'initial' | 'inherit'; // Added prop for text transformation
+  fontFamily?: string; // Optional font family prop
+  span?: boolean; // Optional prop to wrap text in a span
+  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase' | 'initial' | 'inherit'; // Text transformation
 }
 
 const MovingGradientText: React.FC<Props> = ({
   text,
   fontsize,
-  fontFamily = 'PixelifySans', // Default font family
-  span = false, // Default value for span is false
-  textTransform = 'none', // Default value for textTransform is 'none'
+  fontFamily = 'PixelifySans',
+  span = false,
+  textTransform = 'none',
 }) => {
   const [gradientColors] = useState([
     "#d05a45", // Color 1
@@ -24,21 +24,19 @@ const MovingGradientText: React.FC<Props> = ({
     "#4a9c80", // Color 4
   ]);
 
+  // Generate keyframes for shifting color based on gradientColors
   const getColorShiftKeyframes = () => {
     let keyframeStr = "";
     gradientColors.forEach((color, index) => {
       const percentage = (index * 100) / gradientColors.length;
-      keyframeStr += `
-        ${percentage}% {
-          color: ${color};
-        }
-      `;
+      keyframeStr += `${percentage}% { color: ${color}; }`;
     });
     return keyframes`${keyframeStr}`;
   };
 
   const ColorShift = getColorShiftKeyframes();
 
+  // Style each letter with initial color, delay, font family, and transformation
   const letterStyle = (index: number) => {
     const initialColor = gradientColors[index % gradientColors.length];
     const animationDelay = (index * gradientColors.length) / text.length;
@@ -46,11 +44,12 @@ const MovingGradientText: React.FC<Props> = ({
       color: ${initialColor};
       animation: ${ColorShift} ${gradientColors.length}s ease-in-out infinite;
       animation-delay: ${animationDelay}s;
-      font-family: ${fontFamily}; // Apply custom font
-      text-transform: ${textTransform}; // Apply text transformation
+      font-family: ${fontFamily};
+      text-transform: ${textTransform};
     `;
   };
 
+  // Render each letter individually with animated style
   const renderLetters = () => {
     return text.split("").map((letter, index) => (
       <Text
@@ -59,6 +58,7 @@ const MovingGradientText: React.FC<Props> = ({
         fontWeight="bold"
         css={letterStyle(index)}
         key={`letter-${index}`}
+        aria-hidden="true" // Hide individual letters from screen readers for accessibility
       >
         {letter}
       </Text>
@@ -66,7 +66,9 @@ const MovingGradientText: React.FC<Props> = ({
   };
 
   return span ? (
-    <span style={{ whiteSpace: 'nowrap' }}>{renderLetters()}</span>
+    <span style={{ whiteSpace: 'nowrap', display: 'inline-block' }}>
+      {renderLetters()}
+    </span>
   ) : (
     <Box>{renderLetters()}</Box>
   );

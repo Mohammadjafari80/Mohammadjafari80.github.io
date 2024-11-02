@@ -1,7 +1,7 @@
 // src/components/PapersUnderReviewSection.tsx
 import React from 'react';
 import { Box, Heading } from "@chakra-ui/react";
-import PaperComponent from '../componenets/PaperComponent';
+import PaperComponent from '../components/PaperComponent';
 
 const PapersUnderReviewSection: React.FC = () => {
   return (
@@ -11,29 +11,12 @@ const PapersUnderReviewSection: React.FC = () => {
         title="RODEO: Robust Out-of-Distribution Detection Via Exposing Adaptive Outliers"
         authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Ali Ansari, Sepehr Ghobadi, Masoud Hadi, Arshia Soltani Moakhar, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban"
         conference="ICML 2024"
-        // link='https://openreview.net/forum?id=Tc3duzOHa8'
-        // linkText='Open Review'
-        // linkTagColor='#80261b'
         color='#d05a45'
         status='Accepted'
         link='https://rohban-lab.github.io/rodeo/'
         linkText='RODEO'
         linkTagColor='#B31B1B'
       />
-      {/* <PaperComponent
-        title="Perfected by Imperfections: Adversarially Robust Detection of Out-of-Distribution Samples"
-        authors="Hossein Mirzaei, Mohammad Jafari, Hamid Reza Dehbashi, Mohammad Hossein Rohban"
-        conference="ECCV 2024"
-        status='Submitted'
-        color='#4a9c80'
-      />
-      <PaperComponent
-        title="Unsupervised Out-of-Distribution Detection: From Low to High Inlier Variation"
-        authors="Hossein Mirzaei, Mohammad Jafari*, Mojtaba Nafez*, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
-        conference="ECCV 2024"
-        status='Submitted'
-        color='#4a9c80'
-      /> */}
       <PaperComponent
         title="Universal Novelty Detection Through Adaptive Contrastive Learning"
         authors="Hossein Mirzaei, Mojtaba Nafez, Mohammad Jafari, Mohammad Bagher Soltani, Mohammad Sabokrou, Mohammad Hossein Rohban"
@@ -67,10 +50,3 @@ const PapersUnderReviewSection: React.FC = () => {
 };
 
 export default PapersUnderReviewSection;
-
-
-
-// \item \textbf{The Power of Few: Accelerating and Enhancing Data Reweighting with Coreset Selection} \\ \textit{\small \textbf{Mohammad Jafari}, Yimeng Zhang, Yihua Zhang, Sijia Liu}, \textit{\small \textbf{ICASSP 2024}}. [Access upon request]
-// \vspace{2mm}
-// \item \textbf{Killing it with Zero-Shot: Adversarially Robust Novelty Detection} \\ \textit{\small Hossein Mirzaei, \textbf{Mohammad Jafari}, Hamid Reza Dehbashi, Zeinab Sadat Taghavi, Mohammad Sabokrou, Mohammad Hossein Rohban}, \textit{\small \textbf{ICASSP 2024}}. [Access upon request]
-// \vspace{2mm}

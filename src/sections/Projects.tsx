@@ -1,7 +1,7 @@
 // src/components/PapersUnderReviewSection.tsx
 import React from 'react';
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
-import ProjectCard from '../componenets/ProjectCard';  // corrected the folder name from 'componenets' to 'components'
+import ProjectCard from '../components/ProjectCard';  // corrected the folder name from 'componenets' to 'components'
 
 const projectData = [
 

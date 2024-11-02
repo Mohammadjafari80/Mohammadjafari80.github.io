@@ -14,13 +14,13 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
     const [path, setPath] = useState<[number, number][]>([]);
     const colors = ["rgb(63, 110, 231)", "rgba(208, 90, 69)", "rgba(74, 156, 128)"];
 
-    // Function to check if the current device is iOS or iPadOS
+    // Detect if the current device is iOS or iPadOS
     const isIOSOrIPadOS = () => {
         return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     }
 
     useEffect(() => {
-        // Fetch the path from the provided txt file path
+        // Fetch path data from the specified file
         fetch(filePath)
             .then(response => response.text())
             .then(data => {
@@ -34,45 +34,53 @@ const FourierVis: React.FC<FourierVisProps> = ({ timePerPoint, filePath, width =
     }, [filePath]);
 
     useEffect(() => {
-        // Ensure divRef.current is not null
-        if (divRef.current) {
+        if (divRef.current && path.length > 0) {
             if (isIOSOrIPadOS()) {
-                // For iOS or iPadOS, use transitionToImage
+                // For iOS or iPadOS, display a static image instead
                 // const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
                 // diagram.transitionToImage('/portfolio.png');
             } else {
-                // For other devices, perform the animation
-                if (path.length > 0) {
-                    const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
-                    diagram.draw('/portfolio.png');
-                }
+                // Perform the animated Fourier diagram rendering on other devices
+                const diagram = new FourierDiagram(divRef.current, path, timePerPoint, colors, width, height);
+                diagram.draw('/portfolio.png');
             }
         }
-    }, [path, timePerPoint, divRef, isIOSOrIPadOS]);
-    
+    }, [path, timePerPoint, width, height]);
 
     return (
-        <div ref={containerRef} style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-        }}>
+        <div 
+            ref={containerRef} 
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+            }}
+        >
             {isIOSOrIPadOS() ? (
-                // Display a static image for iOS and iPadOS
-                <img src="/portfolio.png" alt="Fourier Visualization" style={{ width: width, height: height, borderRadius: '50%' }} />
+                // Static image for iOS and iPadOS with descriptive alt text
+                <img 
+                    src="/portfolio.png" 
+                    alt="Static Fourier series visualization of a profile image, representing signal approximation with rotating vectors" 
+                    style={{ width: width, height: height, borderRadius: '50%' }} 
+                />
             ) : (
-                // Render the animated diagram for other devices
-                <div style={{
-                    overflow: 'hidden',
-                    width: width,
-                    height: height,
-                }}>
-                    <div ref={divRef} style={{
-                        transform: 'scale(1)',
-                        transformOrigin: 'center center',
-                    }}></div>
+                // Render the animated Fourier diagram on non-iOS devices
+                <div 
+                    style={{
+                        overflow: 'hidden',
+                        width: width,
+                        height: height,
+                    }}
+                >
+                    <div 
+                        ref={divRef} 
+                        style={{
+                            transform: 'scale(1)',
+                            transformOrigin: 'center center',
+                        }} 
+                    />
                 </div>
             )}
         </div>

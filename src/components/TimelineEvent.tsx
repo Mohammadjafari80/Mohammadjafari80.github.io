@@ -12,7 +12,7 @@ import {
   Box,
   Icon
 } from "@chakra-ui/react";
-import { FaLocationDot } from "react-icons/fa6";  // import an icon for the lab
+import { FaLocationDot } from "react-icons/fa6";  // Import an icon for lab location
 
 interface TimelineEventProps {
   imageUrl: string;
@@ -50,71 +50,54 @@ const TimelineEvent: FC<TimelineEventProps> = ({
         base: "1fr",
         lg: "200px 1fr",
       }}
-      templateRows={{
-        lg: "1fr",
-      }}
     >
       <GridItem
         padding={{
           base: "30px",
           lg: "10px",
         }}
-        width={"100%"}
-        overflow={"hidden"}
-        mx={'auto'}
-        display={'flex'}
-        justifyContent={'center'}
+        display="flex"
+        justifyContent="center"
       >
         <Image
           src={imageUrl}
-          alt={title}
+          alt={`${title} research project at ${labName}`}
           borderRadius="25px"
           objectFit="cover"
           height="100%"
         />
       </GridItem>
-      <GridItem padding="30px" position="relative" width="100%" textAlign={'left'}>
-        <Heading as="h2" letterSpacing="1px" fontSize="sm">
-          <Icon as={FaLocationDot}/> {labName}  {/* Use an icon next to the lab name */}
+      <GridItem padding="30px" textAlign="left">
+        <Heading as="h2" fontSize="sm" mb={1} display="flex" alignItems="center">
+          <Icon as={FaLocationDot} mr={2} />
+          {labName}
         </Heading>
-        <Link href={labLink} isExternal>
-          <Heading
-            as="h2"
-            letterSpacing="1px"
-            mt={5}
-            mb={1}
-            fontSize="xl"
-            color={'grey.500'}
-          >
+        {labLink ? (
+          <Link href={labLink} isExternal>
+            <Heading
+              as="h3"
+              letterSpacing="1px"
+              mt={3}
+              fontSize="lg"
+              color="gray.500"
+            >
+              {title}
+            </Heading>
+          </Link>
+        ) : (
+          <Heading as="h3" letterSpacing="1px" mt={3} fontSize="lg" color="gray.500">
             {title}
           </Heading>
-        </Link>
-        <Flex
-          direction={{
-            base: "row-reverse",
-            lg: "row-reverse",
-          }}
-          align={{
-            base: "center",
-            lg: "flex-start",
-          }}
-          justify={{
-            base: "flex-end",
-            lg: "flex-end",
-          }}
-          wrap="wrap"
-          w={"100%"}
-        >
-          <Text as={'kbd'}>{description}</Text>
-          <Box display="flex" alignItems="center" mt={2}>
+        )}
+        <Flex direction="column" align="flex-start" mt={4}>
+          <Text as="kbd">{description}</Text>
+          <Box mt={4}>
             <Badge
               borderRadius="md"
               fontSize="sm"
               fontWeight="bold"
               p={2}
-              mt={5}
-              // colorScheme="blue" 
-              >
+            >
               {date}
             </Badge>
           </Box>
