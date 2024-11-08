@@ -1,16 +1,27 @@
 import { Box, Heading, VStack, Text, HStack, Link } from "@chakra-ui/react";
+import React from "react";
 
-const newsItems = [
+interface NewsContent {
+  text: string;
+  style: number;
+}
+
+interface NewsItem {
+  content: NewsContent[];
+  link?: string;
+  date: string;
+}
+
+const newsItems: NewsItem[] = [
   {
     content: [
       { text: "🏆", style: 0 },
       { text: " I ranked 2nd ", style: 1 },
       { text: "in the ", style: 0 },
       { text: "Neurips 2024 ", style: 2 },
-      { text: "Erasing the Invisible Challenge -",  style: 1 },
-      { text: " BlackBox Track.",  style: 1 },
+      { text: "Erasing the Invisible Challenge -", style: 1 },
+      { text: " BlackBox Track.", style: 1 },
     ],
-    // link: "https://example.com/black-box-track",
     date: "November 2024"
   },
   {
@@ -19,10 +30,9 @@ const newsItems = [
       { text: " I ranked 3rd ", style: 1 },
       { text: "in the ", style: 0 },
       { text: "Neurips 2024 ", style: 2 },
-      { text: "Erasing the Invisible Challenge -",  style: 1 },
-      { text: " BeigeBox Track.",  style: 1 },
+      { text: "Erasing the Invisible Challenge -", style: 1 },
+      { text: " BeigeBox Track.", style: 1 },
     ],
-    // link: "https://example.com/beigebox-track",
     date: "November 2024"
   },
   {
@@ -45,7 +55,7 @@ const newsItems = [
   }
 ];
 
-const getStyledText = (content) => {
+const getStyledText = (content: NewsContent[]) => {
   return content.map((part, index) => {
     switch (part.style) {
       case 1:
@@ -70,7 +80,7 @@ const getStyledText = (content) => {
   });
 };
 
-const News = () => {
+const News: React.FC = () => {
   return (
     <Box textAlign="center" width="100%">
       <Heading mb={8}>News</Heading>
