@@ -1,4 +1,4 @@
-import { Box, Heading, VStack, Text } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text, Link } from "@chakra-ui/react";
 
 const Miscellaneous = () => {
   return (
@@ -6,7 +6,8 @@ const Miscellaneous = () => {
       <Heading mb={8}>Miscellaneous</Heading>
       <VStack spacing={4} align="start" width="100%">
         <Text fontSize="lg">
-          📸 Passionate about photography and cinematography, with a focus on creating a film-like aesthetic in my work.
+          📸 Passionate about photography and cinematography. My work is on
+          <Link href="https://500px.com/p/mohammadjafari01" color="gray.500" isExternal> 500px</Link>.
         </Text>
         <Text fontSize="lg">
           🎨 Experienced in design tools like Photoshop, DaVinci Resolve, and Blender.
