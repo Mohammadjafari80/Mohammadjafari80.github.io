@@ -9,6 +9,7 @@ interface NewsContent {
 interface NewsItem {
   content: NewsContent[];
   link?: string;
+  linkText?: string;
   date: string;
 }
 
@@ -22,7 +23,9 @@ const newsItems: NewsItem[] = [
       { text: "Erasing the Invisible Challenge -", style: 1 },
       { text: " BlackBox Track.", style: 1 },
     ],
-    date: "November 2024"
+    date: "November 2024",
+    link: "https://mohammadjafari80.github.io/blog/#/Erasing%20the%20Invisible",
+    linkText: "See my blog."
   },
   {
     content: [
@@ -33,7 +36,9 @@ const newsItems: NewsItem[] = [
       { text: "Erasing the Invisible Challenge -", style: 1 },
       { text: " BeigeBox Track.", style: 1 },
     ],
-    date: "November 2024"
+    date: "November 2024",
+    link: "https://mohammadjafari80.github.io/blog/#/Erasing%20the%20Invisible",
+    linkText: "See my blog."
   },
   {
     content: [
@@ -90,9 +95,15 @@ const News: React.FC = () => {
             <VStack align="start" width="95%">
               <Text fontSize="md" textAlign="left">
                 {getStyledText(item.content)}
-                {item.link && (
-                  <Link href={item.link} isExternal>
-                    {" "}Read more
+                {item.link && item.linkText && (
+                  <Link 
+                    href={item.link} 
+                    isExternal 
+                    fontFamily="monospace" 
+                    fontSize="md" 
+                    _hover={{ textDecoration: "underline"}}
+                  >
+                    {" "}{item.linkText}
                   </Link>
                 )}
               </Text>
