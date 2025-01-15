@@ -9,7 +9,7 @@ const AboutMe = () => {
 ‎ 
 I am particularly interested in *computer vision*, *natural language processing* (NLP), *multi-level optimization*, and *AI privacy*. My goal is to contribute to creating **efficient**, **resilient**, and **secure AI systems** that address important challenges in technology while prioritizing privacy and reliability.
 
-`} minTypingDelay={20} maxTypingDelay={20} notDisplayCaretAfterFinishes thinkingDelay={100}/>
+`} minTypingDelay={10} maxTypingDelay={10} notDisplayCaretAfterFinishes thinkingDelay={100}/>
       {/* <Text>
         I hold a Bachelor’s degree in Computer Engineering from 
         <Text as="b"> Sharif University of Technology</Text>, with a strong focus on 
