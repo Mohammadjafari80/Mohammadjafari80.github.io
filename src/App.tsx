@@ -15,6 +15,7 @@ import AboutMe from './components/AboutMe';
 import MySVGComponent from './components/MySVGComponent';
 import News from './sections/News';
 import Miscellaneous from './sections/Miscellaneous';
+// import TextEffect from './GPT'
 
 // Detect iOS for conditional rendering
 const isIOS = () => {
