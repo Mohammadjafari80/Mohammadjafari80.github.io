@@ -13,7 +13,7 @@ const PapersUnderReviewSection: React.FC = () => {
         conference="ICML 2024"
         color='#d05a45'
         status='Accepted'
-        link='https://rohban-lab.github.io/rodeo/'
+        link='https://rohban-lab.github.io/rodeo_page/'
         linkText='RODEO'
         linkTagColor='#B31B1B'
       />
