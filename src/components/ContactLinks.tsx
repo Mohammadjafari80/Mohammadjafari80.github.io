@@ -91,7 +91,7 @@ const ContactLinks = () => {
     p={2}
     as="a"
     href="https://www.linkedin.com/in/mohammadjafari01/"
-    gridColumn={{ base: "1 / -1", md: "span 2" }}  // Span full width in base, single column in md
+    gridColumn={{ base: "span 1", md: "span 2" }}  // Span full width in base, single column in md
   >
     <FaLinkedin style={{ marginRight: '12px' }} />
     LinkedIn
