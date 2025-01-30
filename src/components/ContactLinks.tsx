@@ -1,5 +1,5 @@
 import { Grid, Tag } from "@chakra-ui/react";
-import { FaEnvelope, FaFilePdf, FaGithub, FaLinkedin, FaUserGraduate } from 'react-icons/fa';
+import { FaEnvelope, FaFilePdf, FaGithub, FaLinkedin, FaUserGraduate, FaTwitter } from 'react-icons/fa';
 
 const ContactLinks = () => {
   return (
@@ -51,6 +51,21 @@ const ContactLinks = () => {
     <FaGithub style={{ marginRight: '12px' }} />
     Github
   </Tag>
+  
+  <Tag
+        borderRadius="md"
+        fontSize="sm"
+        fontWeight="bold"
+        style={{ backgroundColor: hexToRgba("#1da1f2", 0.5) }} // Twitter blue color
+        m={1}
+        p={2}
+        as="a"
+        href="https://x.com/Jafaresearch" // Replace with your actual Twitter handle URL
+        gridColumn={{ base: "span 1", md: "span 2" }}
+      >
+        <FaTwitter style={{ marginRight: '12px' }} />
+        Twitter (X)
+</Tag>
 
   <Tag
     borderRadius="md"
@@ -61,7 +76,7 @@ const ContactLinks = () => {
     p={2}
     as="a"
     href="https://scholar.google.com/citations?hl=en&authuser=1&user=S8MWCKMAAAAJ"
-    gridColumn={{ base: "span 1", md: "span 3" }}
+    gridColumn={{ base: "span 1", md: "span 2" }}
   >
     <FaUserGraduate style={{ marginRight: '12px' }} />
     Scholar
@@ -76,7 +91,7 @@ const ContactLinks = () => {
     p={2}
     as="a"
     href="https://www.linkedin.com/in/mohammadjafari01/"
-    gridColumn={{ base: "1 / -1", md: "span 3" }}  // Span full width in base, single column in md
+    gridColumn={{ base: "1 / -1", md: "span 2" }}  // Span full width in base, single column in md
   >
     <FaLinkedin style={{ marginRight: '12px' }} />
     LinkedIn
